@@ -1,0 +1,12 @@
+FROM ubuntu
+VOLUME /myvol
+WORKDIR /myvol
+RUN echo "hello world" > greeting
+RUN  useradd jenkins
+USER jenkins
+WORKDIR /bin
+ARG a=30
+ENV a ${a}
+# ENTRYPOINT echo $(( $a + 1 ))
+ENTRYPOINT sleep 30
+

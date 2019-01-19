@@ -1,0 +1,3 @@
+FROM alpine:latest
+RUN apk add --update strace && rm -rf /var/cache/apk/*
+CMD ["strace"]

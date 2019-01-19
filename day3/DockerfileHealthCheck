@@ -1,0 +1,2 @@
+FROM jenkins/jenkins:lts
+HEALTHCHECK --start-period=60s --retries=2 --interval=5s --timeout=1s CMD curl -s -o /dev/null -w "%{http_code}"  http://localhost:8080 || exit 1
